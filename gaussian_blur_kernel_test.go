@@ -3,7 +3,6 @@ package filters
 import (
 	"image"
 	"image/png"
-	"log"
 	"os"
 	"testing"
 
@@ -25,7 +24,7 @@ func TestGaussianBlurKernel(t *testing.T) {
 	dst := image.NewRGBA(src.Bounds())
 
 	filter := NewGaussianBlurKernel(1.0, 2)
-	log.Println(filter.Weights())
+	// log.Println(filter.Weights())
 
 	if err := convolve.Convolve(dst, src, &filter); err != nil {
 		t.Errorf("%s", err)
